@@ -6,10 +6,16 @@ import Link from "gatsby-link";
 
 const Card = styled.div`
   box-shadow: 4px 4px 4px -4px rgba(0, 0, 0, 0.2);
-  flex-basis: calc(33% - ${rhythm(0.5)});
-  flex-shrink: 0;
+  flex-basis: 90%;
+  margin: 0 auto;
+
+  flex-shrink: 1;
   flex-grow: 0;
   text-align: center;
+
+  @media screen and (min-width: 700px) {
+    max-width: calc(33% - 1em);
+  }
 `;
 
 export default ({ heading, icon, children }) => (

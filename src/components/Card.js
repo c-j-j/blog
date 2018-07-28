@@ -1,28 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 import { rhythm } from "../utils/typography";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "gatsby-link";
+import FontAwesomeIcon from "./FontAwesomeIcon";
 
-const Card = styled.div`
-  box-shadow: 4px 4px 4px -4px rgba(0, 0, 0, 0.2);
-  flex-basis: 90%;
-  margin: 0 auto;
-
-  flex-shrink: 1;
-  flex-grow: 0;
+const CardContainer = styled.div`
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
-
-  @media screen and (min-width: 700px) {
-    max-width: calc(33% - 1em);
-  }
+  width: 100%;
 `;
 
-export default ({ heading, icon, children }) => (
-  <Card>
+export const Cards = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  grid-gap: ${rhythm(0.5)};
+  grid-auto-rows: auto;
+  margin-bottom: ${rhythm(2)};
+`;
+
+export const Card = ({ heading, icon, children }) => (
+  <CardContainer>
     <FontAwesomeIcon icon={icon} size="6x" />
     <h3>{heading}</h3>
     {children}
-    <Link href="/">Learn more</Link>
-  </Card>
+    <Link to="/about">Learn more</Link>
+  </CardContainer>
 );

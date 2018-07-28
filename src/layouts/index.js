@@ -1,8 +1,8 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import Link from "gatsby-link";
 import { rhythm } from "../utils/typography";
 import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 const MainContainer = styled.main`
   max-width: 900px;
@@ -10,7 +10,7 @@ const MainContainer = styled.main`
 `;
 
 const theme = {
-  primaryColor: "#CCC"
+  primaryColor: "#484848"
 };
 
 class Template extends React.Component {
@@ -22,6 +22,7 @@ class Template extends React.Component {
           <Nav />
 
           <MainContainer>{children()}</MainContainer>
+          <Footer />
         </div>
       </ThemeProvider>
     );

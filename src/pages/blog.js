@@ -1,7 +1,6 @@
 import React from "react";
 import get from "lodash/get";
-import { Heading } from "../components/Text";
-import { HeadingLink, Link } from "../components/Links";
+import Link from "gatsby-link";
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,11 +13,12 @@ class BlogIndex extends React.Component {
           const title = get(node, "frontmatter.title") || node.fields.slug;
           return (
             <div key={node.fields.slug}>
-              <HeadingLink>
+              <h3>
                 <Link to={node.fields.slug}>{title}</Link>
-              </HeadingLink>
+              </h3>
               <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              <hr />
             </div>
           );
         })}

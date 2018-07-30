@@ -24,7 +24,7 @@ class Bio extends React.Component {
   render() {
     return (
       <BioSection>
-        <ProfileImg src={profilePic} alt={"Chris Jordan"} />
+        {/*<ProfileImg src={profilePic} alt={"Chris Jordan"} />*/}
         <TextContainer>
           <ProfileText>
             Hello! I am a software engineer contractor based in London. I have

@@ -22,7 +22,6 @@ class Template extends React.Component {
           <Nav />
 
           <MainContainer>{children()}</MainContainer>
-          <Footer />
         </div>
       </ThemeProvider>
     );

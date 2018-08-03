@@ -1,7 +1,8 @@
 import React from "react";
-import Link from "gatsby-link";
 import get from "lodash/get";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import Helmet from "react-helmet";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faDesktop,
   faServer,
@@ -10,9 +11,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import Bio from "../components/Bio";
-import Footer from "../components/Footer";
 import { Cards, Card } from "../components/Card";
 import { List, ListItem } from "../components/List";
+
+library.add(faDesktop, faServer, faCogs, faWrench);
 
 class BlogIndex extends React.Component {
   render() {

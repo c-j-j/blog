@@ -6,6 +6,7 @@ import Nav from "../components/Nav";
 const MainContainer = styled.main`
   max-width: 900px;
   margin: ${rhythm(1.5)} auto 0;
+  padding: ${rhythm(0.5)};
 `;
 
 const theme = {

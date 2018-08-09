@@ -1,7 +1,5 @@
 import React from "react";
-import get from "lodash/get";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Helmet from "react-helmet";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faDesktop,
@@ -18,11 +16,8 @@ library.add(faDesktop, faServer, faCogs, faWrench);
 
 class BlogIndex extends React.Component {
   render() {
-    const siteTitle = get(this, "props.data.site.siteMetadata.title");
-
     return (
       <div>
-        <Helmet title={siteTitle} />
         <Bio />
         <Cards>
           <Card heading="Front-end" icon="desktop">
@@ -60,3 +55,13 @@ class BlogIndex extends React.Component {
 }
 
 export default BlogIndex;
+
+export const pageQuery = graphql`
+  query BlogIndexQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;

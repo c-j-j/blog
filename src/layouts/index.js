@@ -1,7 +1,9 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { rhythm } from "../utils/typography";
+import Helmet from "react-helmet";
 import Nav from "../components/Nav";
+import get from "lodash/get";
 
 const MainContainer = styled.main`
   max-width: 900px;
@@ -16,9 +18,28 @@ const theme = {
 class Template extends React.Component {
   render() {
     const { children } = this.props;
+    const siteTitle = get(this.props, "data.site.siteMetadata.title");
     return (
       <ThemeProvider theme={theme}>
         <div>
+          <Helmet
+            title={siteTitle}
+            meta={[
+              {
+                name: "description",
+                content:
+                  "Chris Jordan - London based Full Stack Software Engineer"
+              },
+              {
+                name: "keywords",
+                content:
+                  "javascript, react, redux, es6, java, ruby, tdd, software development"
+              }
+            ]}
+          >
+            <html lang="en" />
+          </Helmet>
+
           <Nav />
 
           <MainContainer>{children()}</MainContainer>
@@ -35,3 +56,13 @@ Template.propTypes = {
 };
 
 export default Template;
+
+export const pageQuery = graphql`
+  query TemplateQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;

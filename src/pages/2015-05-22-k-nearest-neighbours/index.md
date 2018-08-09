@@ -31,8 +31,6 @@ K-Nearest Neighbours Classification works as follows;
 
 Given the following graph;
 
-![image](http://www.statsoft.com/portals/0/Support/KNNOverViewImageA.jpg)
-
 1. Select a query point on the graph (red point on the graph)
 2. Select k number of data points that are closest to the query point.
 3. We can determine that the value of the query point will likely be the most common that the other data points hold.

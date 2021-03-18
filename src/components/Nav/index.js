@@ -77,7 +77,7 @@ export default () => (
     <Wrapper>
       <StartWrapper>
         <Link to="/">
-          <Logo>Chris Jordan</Logo>
+          <Logo>Chris Jordan LTD</Logo>
         </Link>
       </StartWrapper>
       <EndWrapper>
